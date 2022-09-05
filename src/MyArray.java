@@ -1,36 +1,43 @@
-import java.util.Arrays;
-
-public class MyArray {
+public class MyArray<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
 
-    Object[] myArray = new Object[DEFAULT_CAPACITY];
+
+    Object[] myArray;
 
 
     int index = 0;
 
     public MyArray() {
-
+        myArray = new Object[DEFAULT_CAPACITY];
     }
 
     public MyArray(int initial_capacity) {
         if (initial_capacity <= 0) {
             throw new NegativeArraySizeException("Size must be grater than 0");
         }
-        this.myArray = new Object[initial_capacity];
+        this.myArray = new MyArray[initial_capacity];
     }
 
     @Override
     public String toString() {
-        return "MyArray{" +
-                "myArray=" + Arrays.toString(myArray) +
-                '}';
+        StringBuilder myStringArray = new StringBuilder("[");
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] != null) {
+                myStringArray.append(myArray[i]);                                    //Another variant for clear null - Arrays.toString(Arrays.stream(myArray).filter(Objects::nonNull).toArray());
+                myStringArray.append(",");
+            } else
+                break;
+        }
+        myStringArray = new StringBuilder(myStringArray.substring(0, myStringArray.length() - 1));
+        myStringArray.append("]");
+        return String.valueOf(myStringArray);
     }
 
 
-    public void add(Object object) {
+    public void add(T t) {
         if (index <= myArray.length) {
-            myArray[index] = object;
+            myArray[index] = t;
             index++;
 
             int nullCount = 0;
@@ -45,14 +52,23 @@ public class MyArray {
                     newArr[i] = myArray[i];
                 }
                 myArray = newArr;
-
-
             }
         } else {
             throw new IndexOutOfBoundsException();
         }
+    }
 
+
+    public void remove(int index) {
+        for (int i = 0; myArray[i] != null; i++) {
+            if (i >= index) {
+                myArray[i] = myArray[i + 1];
+            }
+
+
+        }
 
     }
+
 
 }
