@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5167542b-a378-44ab-bcc5-925b576fd325" name="Changes" comment="">
+    <list default="true" id="5167542b-a378-44ab-bcc5-925b576fd325" name="Changes" comment="Remove">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyArray.java" afterDir="false" />
@@ -63,8 +63,17 @@
       <updated>1662097614326</updated>
       <workItem from="1662097616016" duration="15298000" />
       <workItem from="1662214578185" duration="4819000" />
-      <workItem from="1662359396695" duration="13965000" />
+      <workItem from="1662359396695" duration="14564000" />
+      <workItem from="1662445171560" duration="5886000" />
     </task>
+    <task id="LOCAL-00001" summary="Remove">
+      <created>1662384770233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662384770233</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove" />
   </component>
 </project>

@@ -26,10 +26,11 @@ public class MyArray<T> {
             if (myArray[i] != null) {
                 myStringArray.append(myArray[i]);                                    //Another variant for clear null - Arrays.toString(Arrays.stream(myArray).filter(Objects::nonNull).toArray());
                 myStringArray.append(",");
-            } else
-                break;
+            } else break;
         }
-        myStringArray = new StringBuilder(myStringArray.substring(0, myStringArray.length() - 1));
+        if (myStringArray.charAt(myStringArray.length() - 1) != '[') {
+            myStringArray.deleteCharAt(myStringArray.length() - 1);
+        }
         myStringArray.append("]");
         return String.valueOf(myStringArray);
     }
@@ -65,9 +66,69 @@ public class MyArray<T> {
                 myArray[i] = myArray[i + 1];
             }
 
-
         }
 
+    }
+
+    public Object get(int index) {
+        if (myArray[index] != null) {
+            return myArray[index];
+        }
+        throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
+
+    }
+
+
+    public boolean set(int index, T t) {
+        if (myArray[index] != null) {
+            myArray[index] = t;
+            return true;
+        }
+        throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
+
+    }
+
+
+    public void clear() {
+        for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = null;
+        }
+    }
+
+    public boolean contains(Object object) {
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == object) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public int indexOf(Object object) {
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i].equals(object) && myArray[i] != null)
+                return i;
+            else
+                return -1;
+        }
+        return -1;
+    }
+
+
+    public int size() {
+        int size = 0;
+        for (int i = 0; myArray[i] != null; i++) {
+            size++;
+        }
+        return size;
+    }
+
+    public boolean isEmpty() {
+        if (size() == 0) {
+            return true;
+        }
+        return false;
     }
 
 
