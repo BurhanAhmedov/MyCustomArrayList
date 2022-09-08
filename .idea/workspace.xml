@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5167542b-a378-44ab-bcc5-925b576fd325" name="Changes" comment="Remove">
+    <list default="true" id="5167542b-a378-44ab-bcc5-925b576fd325" name="Changes" comment="New Methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyArray.java" afterDir="false" />
@@ -64,7 +64,10 @@
       <workItem from="1662097616016" duration="15298000" />
       <workItem from="1662214578185" duration="4819000" />
       <workItem from="1662359396695" duration="14564000" />
-      <workItem from="1662445171560" duration="5886000" />
+      <workItem from="1662445171560" duration="6508000" />
+      <workItem from="1662457665491" duration="1862000" />
+      <workItem from="1662531892015" duration="1717000" />
+      <workItem from="1662626758383" duration="3159000" />
     </task>
     <task id="LOCAL-00001" summary="Remove">
       <created>1662384770233</created>
@@ -73,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662384770233</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New Methods">
+      <created>1662451122008</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662451122008</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove" />
+    <MESSAGE value="New Methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Methods" />
   </component>
 </project>

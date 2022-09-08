@@ -21,18 +21,23 @@ public class MyArray<T> {
 
     @Override
     public String toString() {
+
+        StringBuilder stringBuilderWithoutNull = removeNull();
+
+        return String.valueOf(stringBuilderWithoutNull);
+    }
+
+    public StringBuilder removeNull() {
         StringBuilder myStringArray = new StringBuilder("[");
-        for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] != null) {
-                myStringArray.append(myArray[i]);                                    //Another variant for clear null - Arrays.toString(Arrays.stream(myArray).filter(Objects::nonNull).toArray());
-                myStringArray.append(",");
-            } else break;
+        for (int i = 0; myArray[i] != null; i++) {
+            myStringArray.append(myArray[i]);                            //Another variant for remove null - Arrays.toString(Arrays.stream(myArray).filter(Objects::nonNull).toArray());
+            myStringArray.append(",");
         }
         if (myStringArray.charAt(myStringArray.length() - 1) != '[') {
-            myStringArray.deleteCharAt(myStringArray.length() - 1);
+            myStringArray.deleteCharAt(myStringArray.length() - 1);     //Delete last ',' simvol
         }
         myStringArray.append("]");
-        return String.valueOf(myStringArray);
+        return myStringArray;
     }
 
 
@@ -40,23 +45,30 @@ public class MyArray<T> {
         if (index <= myArray.length) {
             myArray[index] = t;
             index++;
-
-            int nullCount = 0;
-            for (Object obj : myArray) {
-                if (obj == null) {
-                    nullCount++;
-                }
-            }
-            if (myArray.length * 0.25 >= nullCount) {      //Increase capacity of array when 75% length filled
-                Object[] newArr = new Object[(myArray.length * 3) / 2 + 1];
-                for (int i = 0; i < myArray.length; i++) {
-                    newArr[i] = myArray[i];
-                }
-                myArray = newArr;
-            }
+            increaseCapacityOfArray(myArray);
         } else {
             throw new IndexOutOfBoundsException();
         }
+
+
+    }
+
+
+    public void increaseCapacityOfArray(Object[] myArray) {
+        int nullCount = 0;
+        for (Object obj : myArray) {
+            if (obj == null) {
+                nullCount++;
+            }
+        }
+        if (myArray.length * 0.25 >= nullCount) {      //Increase capacity of array when 75% length filled
+            Object[] newArr = new Object[(myArray.length * 3) / 2 + 1];
+            for (int i = 0; i < myArray.length; i++) {
+                newArr[i] = myArray[i];
+            }
+            this.myArray = newArr;
+        }
+
     }
 
 
@@ -107,10 +119,8 @@ public class MyArray<T> {
 
     public int indexOf(Object object) {
         for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i].equals(object) && myArray[i] != null)
-                return i;
-            else
-                return -1;
+            if (myArray[i].equals(object) && myArray[i] != null) return i;
+            else return -1;
         }
         return -1;
     }
